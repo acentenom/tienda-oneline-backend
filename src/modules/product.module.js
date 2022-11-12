@@ -4,14 +4,26 @@ const {
   productByName,
 } = require("../handlers/product.handler");
 
+const getFormatResponse = (data) => {
+  return data.map(f => {
+    if(f.url_image === null || f.url_image === undefined || f.url_image === '') {
+      f.url_image = '../imagenes/producto-sin-imagen.png'
+      return f;
+    }
+    return f;
+  })
+}
+
 const getAllProductsModule = async (name) => {
   try {
     if (name) {
       const productName = await productByName(name);
-      return productName;
+      const res = getFormatResponse(productName)
+      return res;
     }
     const products = await allProducts();
-    return products;
+    const res = getFormatResponse(products)
+    return res;
   } catch (error) {
     throw error;
   }
@@ -20,7 +32,8 @@ const getAllProductsModule = async (name) => {
 const productsByCategoryModule = async (id) => {
   try {
     const productsByCategory = await getProductsByCategory(id);
-    return productsByCategory;
+    const res = getFormatResponse(productsByCategory)
+    return res;
   } catch (error) {
     throw error;
   }
