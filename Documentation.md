@@ -17,7 +17,7 @@ Al realizar la petición, el servidor retorna un JSON con las siguientes caracte
      "discount": 20,
      "category": 1
   },
-...]
+]
 ```
 ### Tablas:
 - id: Identificador único del producto (int).
@@ -42,7 +42,7 @@ Al realizar la petición, el servidor retorna un JSON con las siguientes caracte
     "id": 1,
     "name": "Bebida energetica"
   },
-...]
+]
 ```
 ### Tablas:
 - id: Identificador único de la categoría (int).
@@ -69,7 +69,7 @@ Al realizar la petición, el servidor retorna un JSON con las siguientes caracte
     "discount": 0,
     "category": 3
   },
-...]
+]
 ```
 
 ## GET Buscar productos por Categoría.
@@ -93,5 +93,5 @@ Al realizar la petición, el servidor retorna un JSON con las siguientes caracte
     "discount": 10,
     "category": 2
   },
-...]
+]
 ```
