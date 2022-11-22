@@ -25,7 +25,7 @@ const getProductsByCategory = async (id) => {
 const productByName = async (name) => {
   try {
     const byName = await conn.query(
-      `SELECT * FROM product WHERE name LIKE '${name}%'`
+      `SELECT * FROM product WHERE name LIKE '%${name}%'`
     );
     return byName[0];
   } catch (error) {
